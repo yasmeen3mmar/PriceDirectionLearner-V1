@@ -90,12 +90,21 @@ A simpler model (like Logistic Regression) could be added as a baseline in V2.
 
 ---
 
-## 5. What This Version Shows
+## 5. Evaluation and Interpretation
 
-- I can build a trading algorithm **from scratch** (not just call an API).
-- I can avoid **time-series data leakage** by using a chronological split.
-- I can turn model predictions into actual trades and evaluate them.
-- I can explain why it didn’t beat buy-and-hold all the time (because the model predicts direction, not magnitude, and there are no costs yet).
+The Gradient Boosting model achieved an average **test accuracy of ~52%**, which is slightly above random chance (50%). While this might seem modest, it actually reflects the **realistic difficulty of short-term market prediction** — financial markets are highly efficient and driven by noise, so consistent edge extraction is inherently challenging.
+
+Despite the limited predictive power, this version is a **successful proof of concept**. It demonstrates the full research workflow of a machine learning–based trading system:
+
+- Building a clean, leak-free pipeline from raw market data  
+- Engineering technical features that capture trend and volatility  
+- Applying supervised learning to forecast next-day price direction  
+- Converting model predictions into trading signals and backtesting them  
+- Comparing the strategy’s performance against a buy-and-hold baseline  
+
+While the strategy did not outperform buy-and-hold in this iteration, the project shows a strong foundation for further experimentation — for example, by adding more diverse features (sentiment, volume, macro factors), optimizing model parameters, or introducing risk and position-sizing rules in future versions.
+
+In summary, **V1 succeeds as a research-grade prototype** that validates the full machine learning trading workflow, even if not yet a profitable live model.
 
 ---
 
